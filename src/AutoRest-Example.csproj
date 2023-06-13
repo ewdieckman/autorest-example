@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<IncludeGeneratorSharedCode>true</IncludeGeneratorSharedCode>
+		<RestoreAdditionalProjectSources>https://pkgs.dev.azure.com/azure-sdk/public/_packaging/azure-sdk-for-net/nuget/v3/index.json</RestoreAdditionalProjectSources>
+		<RootNamespace>AutoRestExample</RootNamespace>
+		<Nullable>enable</Nullable>
+		<LangVersion>9.0</LangVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Azure.Core" Version="1.32.0" />
+		<PackageReference Include="Azure.Identity" Version="1.9.0" />
+		<PackageReference Include="Microsoft.Azure.AutoRest.CSharp" Version="3.0.0-beta.20230612.1" PrivateAssets="All" />
+
+		<!-- Add explicitly to use WithGenericAuthority.  
+			Once Azure.Identity's reference gets to 4.54.1, this can be removed -->
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.54.1" />
+	</ItemGroup>
+
+
+</Project>
