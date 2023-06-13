@@ -6,6 +6,12 @@ To work around these limitations, you will need to:
  - Create a new client class that mimics [`MsalConfidentialClient`](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/identity/Azure.Identity/src/MsalConfidentialClient.cs)
  - Explicitly reference `Microsoft.Identity.Client` v4.54.1 until `Azure.Identity` references that version or greater.
 
+## Library generation
+This particular example was generated using the following AutoRest options (found in [autorest.md](autorest.md)
+ - `--public-clients` - Allows the subclients to have public constructors
+ - `--skip-csproj` - Doesn't overwrite the `.csproj` file with default settings everytime it's generated
+ - `--generation1-convenience-client` - Creates models and returns `Response<ModelHere>` for API methods
+
 ## ExampleCredential
 
 This class inherits from `TokenCredential` and closely mimics [`ClientSecretCredential`](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/identity/Azure.Identity/src/Credentials/ClientSecretCredential.cs).  
